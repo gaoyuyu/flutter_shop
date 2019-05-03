@@ -22,6 +22,5 @@ Future getHomePageContent() async {
     }
   } catch (e) {
     return print("Error:=====>${e}");
-    ;
   }
 }
