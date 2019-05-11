@@ -81,7 +81,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
         height: ScreenUtil().setHeight(100),
         padding: EdgeInsets.only(left: 10, top: 20),
         decoration: BoxDecoration(
-            color: isClick ? Colors.black26 : Colors.white,
+            color: isClick ? Colors.black12 : Colors.white,
             border:
                 Border(bottom: BorderSide(width: 1.0, color: Colors.black12))),
         child: Text(
@@ -98,6 +98,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
       CategoryModel category = CategoryModel.fromJson(data);
       setState(() {
         list = category.data;
+        Provide.value<ChildCategory>(context).getChildCategory(list[0].bxMallSubDto);
       });
     });
   }
