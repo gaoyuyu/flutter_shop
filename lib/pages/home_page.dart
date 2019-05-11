@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage>
         body: FutureBuilder(
             future: request("homePageContent", formData: formData),
             builder: (context, snapshot) {
+              print(snapshot);
               if (snapshot.hasData) {
                 var data = json.decode(snapshot.data.toString());
                 List<Map> swiper = (data["data"]["slides"] as List).cast();
@@ -241,6 +242,8 @@ class TopNavigator extends StatelessWidget {
       height: ScreenUtil().setHeight(320),
       padding: EdgeInsets.all(3.0),
       child: GridView.count(
+        //禁止回弹和滑动
+        physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 5,
         padding: EdgeInsets.all(4.0),
         children: navigatorList.map((item) {
