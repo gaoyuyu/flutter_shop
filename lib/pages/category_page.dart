@@ -23,7 +23,9 @@ class _CategoryPageState extends State<CategoryPage> {
           children: <Widget>[
             LeftCategoryNav(),
             Column(
-              children: <Widget>[RightCategoryNav()],
+              children: <Widget>[RightCategoryNav(),
+
+              CategoryGoodsList()],
             ),
           ],
         ),
@@ -146,3 +148,45 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
     );
   }
 }
+
+//商品列表
+class CategoryGoodsList extends StatefulWidget {
+  @override
+  _CategoryGoodsListState createState() => _CategoryGoodsListState();
+}
+
+
+class _CategoryGoodsListState extends State<CategoryGoodsList> {
+
+
+  @override
+  void initState() {
+    _getGoodsList();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("goods"),
+    );
+  }
+
+  void _getGoodsList()  async
+  {
+    var data = {
+      "categoryId":"4",
+      "categorySubId":"",
+      "page":"1"
+    }    ;
+
+
+    await request("getMallGoods",formData: data).then((val)
+    {
+        var data = json.decode(val.toString());
+        print("aaa-->${val}");
+    });
+  }
+}
+
