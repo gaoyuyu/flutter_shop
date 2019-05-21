@@ -3,10 +3,10 @@ import './pages/index_page.dart';
 import 'package:provide/provide.dart';
 import './provide/child_category.dart';
 import './provide/category_goods_list.dart';
+import './provide/details_info.dart';
 import 'package:fluro/fluro.dart';
 import './routers/routes.dart';
 import './routers/application.dart';
-import './provide/details_info.dart';
 
 void main() {
   var childCategory = ChildCategory();

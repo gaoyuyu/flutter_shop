@@ -18,7 +18,7 @@ class DetailsPage extends StatelessWidget {
         title: Text("商品详细页"),
       ),
       body: FutureBuilder(
-          future:,
+          future:_getBackInfo(context),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Container(
