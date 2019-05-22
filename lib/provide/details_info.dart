@@ -20,4 +20,16 @@ class DetailsInfoProvide with ChangeNotifier {
       notifyListeners();
     });
   }
+
+  //tabBar的切换方法
+  changeLeftAndRight(String changeState) {
+    if (changeState == "left") {
+      isLeft = true;
+      isRight = false;
+    } else {
+      isLeft = false;
+      isRight = true;
+    }
+    notifyListeners();
+  }
 }
